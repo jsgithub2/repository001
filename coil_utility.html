@@ -1,0 +1,191 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Strip Steel Utilities</title>
+		<meta content='text/html; charset=UTF-8' http-equiv='content-type' />
+		<link href='assets/css/base.css' rel='stylesheet' type='text/css' />
+	</head>
+	<body>
+		<div id='wrapper'>
+			<div id='header'>
+				<h1>Strip Steel Utilities</h1>
+				<ul>
+					<li><a href='javascript:;'>Split</a></li>
+					<li><a href='javascript:;'>Weight/Dimesions</a></li>
+					<li><a href='javascript:;'>Linear Footage</a></li>
+					<li><a href='javascript:;'>Footage Cutoff</a></li>
+					<li><a href='javascript:;' class='selected'>Information</a></li>
+				</ul>
+			</div>
+			<div class='error'><b>Error:</b> Some fields were not correctly filled out, make sure you filled out all the fields and try again!</div>
+			<div id='containers'>
+				<form method='post' action='' name='split'>
+					<p>
+						Enter values for the Start Inside Diameter, Starting Outside Diameter, Starting Width, and Final Inside Diameter. Then enter the number of splits to see the new coil properties.
+					</p>
+					<div class='inputs'>
+						<div class='labels'>
+							<label>Inside Diameter (In.):</label>
+							<label>Outside Diameter (In.):</label>
+							<label>Width (In.):</label>
+							<label>Weight (Pounds.):</label>
+							<label>Sidewall (In.):</label>
+							<label>PIW:</label>
+							<label>Number of Splits:</label>
+						</div>
+						<fieldset>
+							<legend>Start Coil:</legend>
+							<input type='text' name='id' />
+							<input type='text' name='od' />
+							<input type='text' name='width' />
+							<input type='text' name='weight' disabled />
+							<input type='text' name='sidewall' disabled />
+							<input type='text' name='piw' disabled />
+							<input type='text' name='splits' />
+						</fieldset>
+						<fieldset>
+							<legend>Finished Coil:</legend>
+							<input type='text' name='id2' />
+							<input type='text' name='od2' disabled />
+							<div class='spacer'></div>
+							<input type='text' name='weight2' disabled />
+							<input type='text' name='sidewall2' disabled />
+							<input type='text' name='piw2' disabled />
+							<div class='spacer'></div>
+						</fieldset>
+					</div>
+					<div class='submit_buttons'>
+						<input type='submit' name='submit' value='Calculate' />
+						<input type='reset' name='reset' value='Reset Fields' />
+					</div>
+				</form>
+				<form method='post' action='' name='weight_dimensions'>
+					<p>
+						Leave one field blank, that field will be calculated from the other properties entered.
+					</p>
+					<div class='inputs'>
+						<div class='labels'>
+							<label>Inside Diameter (In.):</label>
+							<label>Outside Diameter (In.):</label>
+							<label>Width (In.):</label>
+							<label>Weight (Pounds.):</label>
+							<label>PIW:</label>
+						</div>
+						<fieldset>
+							<legend>Properties:</legend>
+							<input type='text' name='id' />
+							<input type='text' name='od' />
+							<input type='text' name='width' />
+							<input type='text' name='weight' />
+							<input type='text' name='piw' disabled />
+						</fieldset>
+					</div>
+					<div class='submit_buttons'>
+						<input type='submit' name='submit' value='Calculate' />
+						<input type='reset' name='reset' value='Reset Fields' />
+					</div>
+				</form>
+				<form method='post' action='' name='linear_footage'>
+					<p>
+						Enter the values for the sheet Gauge, Width, and Weight. Linear Footage and PIW (Pounds per Inch of Width) will be calculated.
+					</p>
+					<div class='inputs'>
+						<div class='labels'>
+							<label>Gauge (In.):</label>
+							<label>Width (In.):</label>
+							<label>Weight (Pounds.):</label>
+							<label>Linear Footage:</label>
+							<label>PIW:</label>
+						</div>
+						<fieldset>
+							<legend>Properties:</legend>
+							<input type='text' name='gauge' />
+							<input type='text' name='width' />
+							<input type='text' name='weight' />
+							<input type='text' name='footage' disabled />
+							<input type='text' name='piw' disabled />
+						</fieldset>
+					</div>
+					<div class='submit_buttons'>
+						<input type='submit' name='submit' value='Calculate' />
+						<input type='reset' name='reset' value='Reset Fields' />
+					</div>
+				</form>
+				<form method='post' action='' name='footage_cutoff'>
+					<p>
+						Enter the values for the Gauge, Width, and ammount to cufoff, and select where to cut from. Then enter the weight of the starting coil and the Inside Diameters of the Payoff and the Takeup.
+					</p>
+					<div class='inputs'>
+						<div class='labels'>
+							<label>Weight (Pounds.):</label>
+							<label>Inside Diameter (In.):</label>
+							<label>Outside Diameter (In.):</label>
+							<label>Sidewall (In.):</label>
+							<label>Footage (Ft.):</label>
+							<label>Wraps:</label>
+							<label>PIW:</label>
+						</div>
+						<fieldset>
+							<legend>Start Coil:</legend>
+							<input type='text' name='weight' />
+							<input type='text' name='id' disabled />
+							<input type='text' name='od' disabled />
+							<input type='text' name='sidewall' disabled />
+							<input type='text' name='footage' disabled />
+							<input type='text' name='wraps' disabled />
+							<input type='text' name='piw' disabled />
+						</fieldset>
+						<fieldset>
+							<legend>Payoff:</legend>
+							<input type='text' name='weight2' disabled />
+							<input type='text' name='id2' />
+							<input type='text' name='od2' disabled />
+							<input type='text' name='sidewall2' disabled />
+							<input type='text' name='footage2' disabled />
+							<input type='text' name='wraps2' disabled />
+							<input type='text' name='piw2' disabled />
+						</fieldset>
+						<fieldset>
+							<legend>Takeup:</legend>
+							<input type='text' name='weight3' disabled />
+							<input type='text' name='id3' />
+							<input type='text' name='od3' disabled />
+							<input type='text' name='sidewall3' disabled />
+							<input type='text' name='footage3' disabled />
+							<input type='text' name='wraps3' disabled />
+							<input type='text' name='piw3' disabled />
+						</fieldset>
+						<div class='labels small'>
+							<label>Gauge (In.):</label>
+							<label>Width (In.):</label>
+							<label>Cutoff (Ft.):</label>
+							<label>Cut From:</label>
+						</div>
+						<fieldset>
+							<legend>Properties:</legend>
+							<input type='text' name='gauge' />
+							<input type='text' name='width' />
+							<input type='text' name='cutoff' />
+							<select name='cut_from'>
+								<option value='id'>Inside Diameter</option>
+								<option value='od'>Outside Diameter</option>
+							</select>
+						</fieldset>
+					</div>
+					<div class='submit_buttons'>
+						<input type='submit' name='submit' value='Calculate' />
+						<input type='reset' name='reset' value='Reset Fields' />
+					</div>
+				</form>
+				<div class='selected'>
+					<img src='assets/img/orthographic.png' alt='Orthographic Views' class='left' />
+					<p>
+						This tool is used to calculate various properties of steel strip coils. By using the different tabs above you may enter measurements for a steel sheet coil as shown on the left.
+					</p>
+				</div>
+			</div>
+		</div>
+		<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js' type='text/javascript'></script>
+		<script src='assets/js/base.js' type='text/javascript'></script>
+	</body>
+</html>
